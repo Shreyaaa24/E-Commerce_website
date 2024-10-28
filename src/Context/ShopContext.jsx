@@ -23,7 +23,7 @@ setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
   const removefromCart = (itemsId) => {
     setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
       }
-
+//total cart amt
 const getTotalCartAmout=()=>{
   let totalAmount=0;
   for(const item in cartItems){
@@ -33,19 +33,19 @@ const getTotalCartAmout=()=>{
     }
     return totalAmount;
   }
-}
+}//total number of items
 const getTotalCartItems = () => {
   let totalItem=0;
   for(const item in cartItems){
 if(cartItems[item]>0){
-  totalItem+=cartItems[item];
+  totalItem += cartItems[item];
 }
   }
   return totalItem;
 }
 
 
-contextValue = {getTotalCartItems,getTotalCartAmount,all_product,cartItems,addToCart,removefromCart}
+contextValue = {getTotalCartItems,getTotalCartAmount,all_product,cartItems,addtoCart,removefromCart}
 
   return (
     <ShopContext.Provider value={contextValue}>

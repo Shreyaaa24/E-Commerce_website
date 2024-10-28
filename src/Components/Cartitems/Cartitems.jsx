@@ -1,7 +1,6 @@
 import React from 'react'
 import './Cartitems.css'
 import Cartitems from '../Components/Cartitems/Cartitems'
-import { UserCircleIcon } from '@heroicons/react/16/solid'
 import ShopContext from '../Context/ShopContext'
 import remove_icon from '../Assets/cart_cross_icon.png'
 const Cartitems = () => {
@@ -21,15 +20,15 @@ const Cartitems = () => {
       
    
     {all_product.map((e)=>{
-if(Cartitems[e.id>0])
+if(Cartitems[e.id]>0)
     {
 return <div>
 <div className='cartitems-format'>
-  <img src =""alt="" className='carticon-product-icon'/>
+  <img src ={e.img}alt="" className='carticon-product-icon'/>
 <p>{e.name}</p>
 <p>${e.new_price}</p>
-<button className='cartitems-quantity'>{cartitems[e.id]}</button>  
-<p>${e.new_price*cartitems[e.id]}</p>      
+<button className='cartitems-quantity'>{Cartitems[e.id]}</button>  
+<p>${e.new_price*Cartitems[e.id]}</p>      
 <img className='cartitems-remove-icon'   src={remove_icon} onClick={()=>{removefromcart(e.id)}}alt=""/>
 </div>
  <hr/>
